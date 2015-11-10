@@ -46,7 +46,7 @@ You will get a generated file that looks like this:
 You can then use this in your code like so:
 
 	func exampleButtonAction() {
-        let viewController = 	self.storyboard?.instantiateViewControllerWithIdentifier(Constants.ViewController.Second)
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.ViewController.Second)
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
