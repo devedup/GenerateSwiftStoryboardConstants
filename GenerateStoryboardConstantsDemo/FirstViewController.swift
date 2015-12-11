@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func exampleButtonAction() {
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.ViewController.Second)
+        let viewController = StoryboardViewController.Second.instantiate()
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
@@ -30,11 +30,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(Constants.ReuseCell.ExampleCell, forIndexPath: indexPath)
+        return tableView.dequeueReusableCellWithIdentifier(StoryboardReuseCell.ExampleCell.rawValue, forIndexPath: indexPath)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(Constants.Segue.ToSecondViewController, sender: self)
+        self.performSegue(StoryboardSegue.ToSecondViewController)
     }
 
 }
